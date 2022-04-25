@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Book Reader</string>
+
+    <string-array name="viewmode_text">
+        <item>@string/view_mode_paging</item>
+        <item>@string/view_mode_continuous</item>
+    </string-array>
+
+    <string name="loading_book">Könyv beolvasása</string>
+    <string name="open_file">Fájl megnyitása</string>
+    <string name="catalog_home">Kezdőoldal</string>
+    <string name="book_toc">Tartalom</string>
+    <string name="search">Keresés</string>
+    <string name="book_rename">Átnevezés</string>
+    <string name="book_open">Megnyitás</string>
+    <string name="book_delete">Törlés</string>
+    <string name="my_readings">Könyveim</string>
+    <string name="search_local">Keresés helyben&#8230;</string>
+    <string name="search_book">Könyvek keresése&#8230;</string>
+    <string name="view_mode_continuous">Folyamatos nézet</string>
+    <string name="view_mode_paging">Oldalakra tördelt nézet</string>
+
+    <string name="pref_rotate_title">Forgatás</string>
+    <string name="pref_rotate_summary">Elforgatás engedélyezése</string>
+    <string name="pref_theme_title">Téma</string>
+    <string name="pref_storagepath_title">Tárhely</string>
+    <string name="pref_storagepath_summary">Alapértelmezett</string>
+    <string name="pref_volume_title">Lapozás</string>
+    <string name="pref_volume_summary">Lapozás a hangerőgombokkal</string>
+
+    <string name="continue_reading">Az olvasás folytatása:</string>
+    <string name="sync_conflict">Szinkronizációs konfliktus</string>
+    <string name="view_mode">Tördelés módja</string>
+    <string name="image_original_size">Eredeti méret</string>
+    <string name="image_fit_to_screen">Igazítás a képernyőhöz</string>
+    <string name="image_original_size_all_images">Minden kép eredeti méretben</string>
+    <string name="image_fit_to_screen_all_images">Minden kép igazítása a képernyőhöz</string>
+    <string name="keep_reading_position">Pozíció megtartása</string>
+    <string name="add_more_fonts_to">További betűkészletek hozzáadása: a \"%s\" mappába</string>
+    <string name="controls_fullscreen">Teljes képernyő</string>
+    <string name="controls_navigate">Navigáció</string>
+    <string name="controls_nextpage">Következő oldal</string>
+    <string name="controls_prevpage">Előző oldal</string>
+    <string name="controls_brightness">Fényerő</string>
+    <string name="per_second">/s</string>
+    <string name="delete_bookmark">Könyvjelző törlése</string>
+    <string name="bookmarks">Könyvjelzők</string>
+    <string name="bookmark_edit">Módosít</string>
+    <string name="book_font">Betűtípus</string>
+    <string name="sort_by">Sorbarendezés ...</string>
+    <string name="sort_by_name_a_z">Név szerint, A-Z</string>
+    <string name="sort_by_name_z_a">Név szerint, Z-A</string>
+    <string name="sort_by_added_asc">Utoljára hozzáadott a végén</string>
+    <string name="sort_by_added_desc">Utoljára hozzáadott az elején</string>
+    <string name="sort_by_opened_asc">Utoljára olvasott a végén</string>
+    <string name="sort_by_opened_desc">Utoljára olvasott az elején</string>
+    <string name="pref_tts_title">TTS Language</string>
+</resources>

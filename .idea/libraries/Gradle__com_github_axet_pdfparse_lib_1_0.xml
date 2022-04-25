@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.axet:pdfparse-lib:1.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.axet/pdfparse-lib/1.0/f4e603de11fcc5141506ddef198aebaa569a52da/pdfparse-lib-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.axet/pdfparse-lib/1.0/5667a1d8c4bf67f1c31116831d5fdd9323da71ac/pdfparse-lib-1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.axet/pdfparse-lib/1.0/761a0ee6579b4b1795b99c81263194875adbf031/pdfparse-lib-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

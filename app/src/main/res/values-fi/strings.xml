@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Lukija</string>
+
+    <string-array name="viewmode_text">
+        <item>@string/view_mode_paging</item>
+        <item>@string/view_mode_continuous</item>
+    </string-array>
+
+    <string name="loading_book">Ladataan kirjaa</string>
+    <string name="open_file">Avaa tiedosto</string>
+    <string name="catalog_home">Koti</string>
+    <string name="book_toc">Sisällys</string>
+    <string name="search">Etsi</string>
+    <string name="book_rename">Nimeä uudelleen</string>
+    <string name="book_open">Avaa</string>
+    <string name="book_delete">Poista</string>
+    <string name="my_readings">Luettavani</string>
+    <string name="search_local">Paikallinen haku&#8230;</string>
+    <string name="search_book">Kirjahaku&#8230;</string>
+    <string name="view_mode_continuous">Jatkuva näkymä</string>
+    <string name="view_mode_paging">Sivunäkymä</string>
+
+    <string name="pref_rotate_title">Näytön kääntäminen</string>
+    <string name="pref_rotate_summary">Ota käyttöön näkymän kääntäminen</string>
+    <string name="pref_theme_title">Teema</string>
+    <string name="pref_storagepath_title">Synkronoitava kansio</string>
+    <string name="pref_storagepath_summary">\'Synkronoitava hakemisto\' valittu</string>
+    <string name="pref_volume_title">Äänenvoimakkuuspainikkeet</string>
+    <string name="pref_volume_summary">Käytä äänenvoimakkuuspainikkeita sivun kääntämiseen</string>
+
+    <string name="continue_reading">Jatka lukemista kohdasta:</string>
+    <string name="sync_conflict">Synkronointivirhe</string>
+    <string name="view_mode">Näkymä</string>
+    <string name="image_original_size">Alkuperäinen koko</string>
+    <string name="image_fit_to_screen">Sovita näyttöön</string>
+    <string name="image_original_size_all_images">Kaikki kuvat alkuperäisessä koossaan</string>
+    <string name="image_fit_to_screen_all_images">Kaikki kuvat näyttöön sovitettuna</string>
+    <string name="keep_reading_position">Pidä sijainti</string>
+    <string name="add_more_fonts_to">Lisää kirjasimia kohteeseen \'%s\'</string>
+    <string name="controls_fullscreen">Koko näyttö</string>
+    <string name="controls_navigate">Navigoi</string>
+    <string name="controls_nextpage">Seuraava sivu</string>
+    <string name="controls_prevpage">Edellinen sivu</string>
+    <string name="controls_brightness">Kirkkaus</string>
+    <string name="per_second">/s</string>
+    <string name="delete_bookmark">Poista kirjanmerkki</string>
+    <string name="bookmarks">Kirjanmerkit</string>
+    <string name="bookmark_edit">Muokkaa</string>
+    <string name="book_font">Kirjasin</string>
+    <string name="sort_by">Lajitteluperuste...</string>
+    <string name="sort_by_name_a_z">Aakkosjärjestys A-Z</string>
+    <string name="sort_by_name_z_a">Käänteinen aakkosjärjestys Z-A</string>
+    <string name="sort_by_added_asc">Lisäysaika, nouseva</string>
+    <string name="sort_by_added_desc">Lisäysaika, laskeva</string>
+    <string name="sort_by_opened_asc">Avausaika, nouseva</string>
+    <string name="sort_by_opened_desc">Avausaika, laskeva</string>
+    <string name="pref_tts_title">TTS Language</string>
+</resources>

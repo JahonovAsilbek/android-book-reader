@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/search_header_toolbar_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:orientation="horizontal">
+
+                <com.github.axet.androidlibrary.widgets.EqualLinearLayout
+                    android:id="@+id/search_header_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingBottom="2dp">
+
+                    <ImageButton
+                        android:id="@+id/search_header_toolbar_news"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/library_rating_bg"
+                        android:clickable="false"
+                        android:gravity="center"
+                        android:src="@drawable/ic_fiber_new_black_24dp"
+                        app:tint="?attr/colorAccent" />
+
+                    <include layout="@layout/toolbar_icon" />
+
+                    <FrameLayout
+                        android:id="@+id/search_header_toolbar_favs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:clipChildren="false"
+                        android:clipToPadding="false">
+
+                        <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/library_rating_bg"
+                            android:clickable="false"
+                            android:gravity="center"
+                            android:src="@drawable/ic_star_black_24dp"
+                            android:tint="?attr/colorAccent" />
+
+                        <TextView
+                            android:id="@+id/search_header_toolbar_favs_name"
+                            style="@style/toolbar_icon_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="10200" />
+                    </FrameLayout>
+
+                    <ImageButton
+                        android:id="@+id/search_header_toolbar_search"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/library_rating_bg"
+                        android:clickable="false"
+                        android:gravity="center"
+                        android:src="@drawable/ic_search_black_24dp"
+                        android:tint="?attr/colorAccent" />
+                </com.github.axet.androidlibrary.widgets.EqualLinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

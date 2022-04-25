@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.axet:zip4j:2.9.0-1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.axet/zip4j/2.9.0-1/2b0fb144e05b2ca70f8395fe5af237b22efa5901/zip4j-2.9.0-1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.axet/zip4j/2.9.0-1/3be8c1f96be0a6747a0d7f0aaf6e1c190bf16925/zip4j-2.9.0-1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.axet/zip4j/2.9.0-1/ca476fb78e3ea0646ce682216ed67136ef2ad00/zip4j-2.9.0-1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

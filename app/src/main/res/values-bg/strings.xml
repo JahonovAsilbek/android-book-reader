@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Book Reader</string>
+
+    <string-array name="viewmode_text">
+        <item>@string/view_mode_paging</item>
+        <item>@string/view_mode_continuous</item>
+    </string-array>
+
+    <string name="loading_book">Зареждаме книга</string>
+    <string name="open_file">Отвори файл</string>
+    <string name="catalog_home">Начало</string>
+    <string name="book_toc">Съдържание</string>
+    <string name="search">Търси</string>
+    <string name="book_rename">Преименувай</string>
+    <string name="book_open">Отвори</string>
+    <string name="book_delete">Изтрий</string>
+    <string name="my_readings">Моите книги</string>
+    <string name="search_local">Локално търсене&#8230;</string>
+    <string name="search_book">Търсене на книга&#8230;</string>
+    <string name="view_mode_continuous">Непрекъснат изглед</string>
+    <string name="view_mode_paging">По страници</string>
+
+    <string name="pref_rotate_title">Завъртане</string>
+    <string name="pref_rotate_summary">Разреши завъртане на екрана</string>
+    <string name="pref_theme_title">Тема</string>
+    <string name="pref_storagepath_title">Папка за синхронизиране</string>
+    <string name="pref_storagepath_summary">Няма избрана</string>
+    <string name="pref_volume_title">Бутони за звук</string>
+    <string name="pref_volume_summary">Прелиствай с бутони за звук</string>
+
+    <string name="continue_reading">Продължи да четеш от:</string>
+    <string name="sync_conflict">Проблем при синхронизиране</string>
+    <string name="view_mode">Изглед</string>
+    <string name="image_original_size">Оригинален размер</string>
+    <string name="image_fit_to_screen">Побери в екрана</string>
+    <string name="image_original_size_all_images">Картинки с оригинален размер</string>
+    <string name="image_fit_to_screen_all_images">Картинките да се побират в екрана</string>
+    <string name="keep_reading_position">Запазвай позиция на четене</string>
+    <string name="add_more_fonts_to">Добави още шрифтове в \'%s\'</string>
+    <string name="controls_fullscreen">Цял екран</string>
+    <string name="controls_navigate">Навигация</string>
+    <string name="controls_nextpage">Следваща страница</string>
+    <string name="controls_prevpage">Предищна страница</string>
+    <string name="controls_brightness">Осветеност</string>
+    <string name="per_second">/с</string>
+    <string name="delete_bookmark">Изтрий отметка</string>
+    <string name="bookmarks">Отметки</string>
+    <string name="bookmark_edit">Редактирай</string>
+    <string name="book_font">Font</string>
+    <string name="sort_by">Sort By ...</string>
+    <string name="sort_by_name_a_z">Name A-Z</string>
+    <string name="sort_by_name_z_a">Name Z-A</string>
+    <string name="sort_by_added_asc">Added Asc</string>
+    <string name="sort_by_added_desc">Added Desc</string>
+    <string name="sort_by_opened_asc">Opened Asc</string>
+    <string name="sort_by_opened_desc">Opened Desc</string>
+    <string name="pref_tts_title">TTS Language</string>
+</resources>

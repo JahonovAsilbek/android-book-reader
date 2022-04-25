@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Book Reader</string>
+
+    <string-array name="viewmode_text">
+        <item>@string/view_mode_paging</item>
+        <item>@string/view_mode_continuous</item>
+    </string-array>
+
+    <string name="loading_book">Boek Laden</string>
+    <string name="open_file">Open Bestand</string>
+    <string name="catalog_home">Home</string>
+    <string name="book_toc">TOC</string>
+    <string name="search">Zoek</string>
+    <string name="book_rename">Naam Wijzigen</string>
+    <string name="book_open">Open</string>
+    <string name="book_delete">Verwijder</string>
+    <string name="my_readings">Mijn Boeken</string>
+    <string name="search_local">Zoek Lokaal&#8230;</string>
+    <string name="search_book">Zoek Boek&#8230;</string>
+    <string name="view_mode_continuous">Continu Lezen</string>
+    <string name="view_mode_paging">Per Pagina Lezen</string>
+
+    <string name="pref_rotate_title">Draaien</string>
+    <string name="pref_rotate_summary">Laat schermdraaien toe</string>
+    <string name="pref_theme_title">Thema</string>
+    <string name="pref_storagepath_title">Synchronisatiefolder</string>
+    <string name="pref_storagepath_summary">Geen \'Synchronisatiefolder\' geselecteerd</string>
+    <string name="pref_volume_title">Volumeknoppen Draaien</string>
+    <string name="pref_volume_summary">Gebruik volumeknoppen om tussen pagina\'s te navigeren</string>
+
+    <string name="continue_reading">Ga door met lezen van:</string>
+    <string name="sync_conflict">Synchroniseer conflict</string>
+    <string name="view_mode">Lees Mode</string>
+    <string name="image_original_size">Origineel Formaat</string>
+    <string name="image_fit_to_screen">Pas aan aan Scherm</string>
+    <string name="image_original_size_all_images">Alle Beelden Origineel Formaat</string>
+    <string name="image_fit_to_screen_all_images">Alle Beelden Aanpassen aan Scherm</string>
+    <string name="keep_reading_position">Houd Positie</string>
+    <string name="add_more_fonts_to">Voeg meer lettertypes toe aan \'%s\'</string>
+    <string name="controls_fullscreen">Fullscreen</string>
+    <string name="controls_navigate">Navigeer</string>
+    <string name="controls_nextpage">Volgende pagina</string>
+    <string name="controls_prevpage">Vorige pagina</string>
+    <string name="controls_brightness">Helderheid</string>
+    <string name="per_second">/s</string>
+    <string name="delete_bookmark">Verwijder bladwijzer</string>
+    <string name="bookmarks">Bladwijzers</string>
+    <string name="bookmark_edit">Aanpassen</string>
+    <string name="book_font">Lettertype</string>
+    <string name="sort_by">Sort By ...</string>
+    <string name="sort_by_name_a_z">Name A-Z</string>
+    <string name="sort_by_name_z_a">Name Z-A</string>
+    <string name="sort_by_added_asc">Added Asc</string>
+    <string name="sort_by_added_desc">Added Desc</string>
+    <string name="sort_by_opened_asc">Opened Asc</string>
+    <string name="sort_by_opened_desc">Opened Desc</string>
+    <string name="pref_tts_title">TTS Language</string>
+</resources>

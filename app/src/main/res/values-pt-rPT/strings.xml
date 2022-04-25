@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Leitor de Livros</string>
+
+    <string-array name="viewmode_text">
+        <item>@string/view_mode_paging</item>
+        <item>@string/view_mode_continuous</item>
+    </string-array>
+
+    <string name="loading_book">Carregando livro</string>
+    <string name="open_file">Abrir ficheiro</string>
+    <string name="catalog_home">Home</string>
+    <string name="book_toc">Índice</string>
+    <string name="search">Procurar</string>
+    <string name="book_rename">Mudar nome</string>
+    <string name="book_open">Abrir</string>
+    <string name="book_delete">Eliminar</string>
+    <string name="my_readings">As minhas leituras</string>
+    <string name="search_local">Pesquisa local&#8230;</string>
+    <string name="search_book">Procurar livro&#8230;</string>
+    <string name="view_mode_continuous">Ver em modo contínuo</string>
+    <string name="view_mode_paging">Ver em modo página</string>
+
+    <string name="pref_rotate_title">Rodar</string>
+    <string name="pref_rotate_summary">Deixar o ecrã rodar</string>
+    <string name="pref_theme_title">Tema</string>
+    <string name="pref_storagepath_title">Pasta de sincronização</string>
+    <string name="pref_storagepath_summary">Nenhuma \'Sync Folder\' selecionada</string>
+    <string name="pref_volume_title">Virar com volume</string>
+    <string name="pref_volume_summary">Usar os botões de volume para virar páginas</string>
+
+    <string name="continue_reading">Continuar a ler de:</string>
+    <string name="sync_conflict">Conflito de sincronização</string>
+    <string name="view_mode">Modo de ver</string>
+    <string name="image_original_size">Tamanho original</string>
+    <string name="image_fit_to_screen">Ajustar-se ao ecrã</string>
+    <string name="image_original_size_all_images">Todas imagens em tamanho original</string>
+    <string name="image_fit_to_screen_all_images">Ajsutar todas as imagens ao ecrã</string>
+    <string name="keep_reading_position">Manter posição</string>
+    <string name="add_more_fonts_to">Adicionar mais fontes \'%s\'</string>
+    <string name="controls_fullscreen">Ecrã inteiro</string>
+    <string name="controls_navigate">Navegar</string>
+    <string name="controls_nextpage">Próxima página</string>
+    <string name="controls_prevpage">Página anterior</string>
+    <string name="controls_brightness">Brilho</string>
+    <string name="per_second">/s</string>
+    <string name="delete_bookmark">Eliminar marcador</string>
+    <string name="bookmarks">Marcadores</string>
+    <string name="bookmark_edit">Editar</string>
+    <string name="book_font">Fonte</string>
+    <string name="sort_by">Ordenar por ...</string>
+    <string name="sort_by_name_a_z">Nome A-Z</string>
+    <string name="sort_by_name_z_a">Nome Z-A</string>
+    <string name="sort_by_added_asc">Adicionado Ascendente</string>
+    <string name="sort_by_added_desc">Adicionado Descendente</string>
+    <string name="sort_by_opened_asc">Aberto Ascendente</string>
+    <string name="sort_by_opened_desc">Aberto Descendente</string>
+    <string name="pref_tts_title">TTS Language</string>
+</resources>

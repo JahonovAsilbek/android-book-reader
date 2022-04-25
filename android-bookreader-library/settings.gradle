@@ -1,0 +1,5 @@
+include ':app', ':android-fbreader-library', ':android-library'
+
+project(':app').projectDir = new File('../app')
+project(':android-fbreader-library').projectDir = new File('../android-fbreader-library')
+project(':android-library').projectDir = new File('../android-library')

@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.axet:android-library:1.35.18@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cb79f28247a0788f4becc6c307397a65/jetified-android-library-1.35.18/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cb79f28247a0788f4becc6c307397a65/jetified-android-library-1.35.18/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cb79f28247a0788f4becc6c307397a65/jetified-android-library-1.35.18/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cb79f28247a0788f4becc6c307397a65/jetified-android-library-1.35.18/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.axet/android-library/1.35.18/b5dd08fbcd35113f8cc67c939772982f57f91d81/android-library-1.35.18-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.axet/android-library/1.35.18/b84fa467ca65adb9ef0c40869811eab1001f8fa0/android-library-1.35.18-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

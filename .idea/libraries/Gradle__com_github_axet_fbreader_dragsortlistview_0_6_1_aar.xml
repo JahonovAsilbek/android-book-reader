@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.axet.fbreader:dragsortlistview:0.6.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b3dc0f845be1de0369ac142e8ffb6600/jetified-dragsortlistview-0.6.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b3dc0f845be1de0369ac142e8ffb6600/jetified-dragsortlistview-0.6.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b3dc0f845be1de0369ac142e8ffb6600/jetified-dragsortlistview-0.6.1/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.axet.fbreader/dragsortlistview/0.6.1/667e62e9d465b17a3171e551005e7ee5f3843d09/dragsortlistview-0.6.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.axet.fbreader/dragsortlistview/0.6.1/c72d6eb7591a6d2888d511214d4a827e7e71eab0/dragsortlistview-0.6.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

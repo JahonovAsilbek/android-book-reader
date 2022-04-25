@@ -1,0 +1,32 @@
+<resources>
+    <style name="AppThemeLight" parent="AppThemeLightLib">
+        <item name="side_nav_bar">@drawable/side_nav_bar_light</item>
+    </style>
+
+    <style name="AppThemeLight.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppThemeLight.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppThemeDark" parent="AppThemeDarkLib">
+        <item name="side_nav_bar">@drawable/side_nav_bar_dark</item>
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
+
+    <style name="AppThemeDark.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppThemeDark.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
+
+    <style name="toolbar_bottom_icon_text" parent="toolbar_icon_text">
+        <item name="android:layout_marginBottom">7dp</item>
+        <item name="android:maxWidth">60dp</item>
+        <item name="android:singleLine">true</item>
+    </style>
+</resources>

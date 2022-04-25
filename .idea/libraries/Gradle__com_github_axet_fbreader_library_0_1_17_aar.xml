@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.axet.fbreader:library:0.1.17@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/34b4c486d2df2e8f77159a1b50ed21a5/jetified-library-0.1.17/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/34b4c486d2df2e8f77159a1b50ed21a5/jetified-library-0.1.17/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/34b4c486d2df2e8f77159a1b50ed21a5/jetified-library-0.1.17/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.axet.fbreader/library/0.1.17/add74ba84a6fdd38639e3ce22e2ca5b0dd719ccb/library-0.1.17-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.axet.fbreader/library/0.1.17/6cc5c9ac5a1723f6cfa0ff82e0282528a6ec3612/library-0.1.17-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

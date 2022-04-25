@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Kitap Okuyucu</string>
+
+    <string-array name="viewmode_text">
+        <item>@string/view_mode_paging</item>
+        <item>@string/view_mode_continuous</item>
+    </string-array>
+
+    <string name="loading_book">Kitap Yükleniyor</string>
+    <string name="open_file">Dosya Aç</string>
+    <string name="catalog_home">Ev</string>
+    <string name="book_toc">Dizin</string>
+    <string name="search">Ara</string>
+    <string name="book_rename">Yeniden Adlandır</string>
+    <string name="book_open">Aç</string>
+    <string name="book_delete">Sil</string>
+    <string name="my_readings">Okumalarım</string>
+    <string name="search_local">Yerel Arama&#8230;</string>
+    <string name="search_book">Kitap Arama&#8230;</string>
+    <string name="view_mode_continuous">Sürekli Görünüm</string>
+    <string name="view_mode_paging">Sayfalı Görünüm</string>
+
+    <string name="pref_rotate_title">Döndür</string>
+    <string name="pref_rotate_summary">Ekran döndürmeye izin ver</string>
+    <string name="pref_theme_title">Gövde</string>
+    <string name="pref_storagepath_title">Eşzamanlama Klasörü</string>
+    <string name="pref_storagepath_summary">\'Eşzamanlama Klasörü\' seçilmedi</string>
+    <string name="pref_volume_title">Ses Tuşlarıyla Çevir</string>
+    <string name="pref_volume_summary">Sayfaları çevirmek için ses tuşlarını kullan</string>
+
+    <string name="continue_reading">Okumayı sürdür:</string>
+    <string name="sync_conflict">Eşzamanlama çakışması</string>
+    <string name="view_mode">Görünüm Kipi</string>
+    <string name="image_original_size">Özgün Boyut</string>
+    <string name="image_fit_to_screen">Ekrana Sığdır</string>
+    <string name="image_original_size_all_images">Tüm Görüntüler Özgün Boyutta</string>
+    <string name="image_fit_to_screen_all_images">Tüm Görüntüleri Ekrana Sığdır</string>
+    <string name="keep_reading_position">Konumu Tut</string>
+    <string name="add_more_fonts_to">Yeni yazı tipleri ekle \'%s\'</string>
+    <string name="controls_fullscreen">Tam ekran</string>
+    <string name="controls_navigate">Gezin</string>
+    <string name="controls_nextpage">Sonraki sayfa</string>
+    <string name="controls_prevpage">Önceki sayfa</string>
+    <string name="controls_brightness">Parlaklık</string>
+    <string name="per_second">/sn</string>
+    <string name="delete_bookmark">Yer imini sil</string>
+    <string name="bookmarks">Yer İmleri</string>
+    <string name="bookmark_edit">Düzenle</string>
+    <string name="book_font">Yazı Tipi</string>
+    <string name="sort_by">Sırala ...</string>
+    <string name="sort_by_name_a_z">Ad A-Z</string>
+    <string name="sort_by_name_z_a">Ad Z-A</string>
+    <string name="sort_by_added_asc">Eklenme Artan</string>
+    <string name="sort_by_added_desc">Eklenme Azalan</string>
+    <string name="sort_by_opened_asc">Açılma Artan</string>
+    <string name="sort_by_opened_desc">Açılma Azalan</string>
+    <string name="pref_tts_title">TTS Language</string>
+</resources>

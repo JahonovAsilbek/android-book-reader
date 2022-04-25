@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="Gradle: net.i2p.android.ext:floatingactionbutton:1.10.1@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bd0852be1026ee94a6292dd6b1ae234e/jetified-floatingactionbutton-1.10.1/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bd0852be1026ee94a6292dd6b1ae234e/jetified-floatingactionbutton-1.10.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bd0852be1026ee94a6292dd6b1ae234e/jetified-floatingactionbutton-1.10.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bd0852be1026ee94a6292dd6b1ae234e/jetified-floatingactionbutton-1.10.1/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.i2p.android.ext/floatingactionbutton/1.10.1/29b6b3af344c51c91af85b9dc774bef043ab1d75/floatingactionbutton-1.10.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.i2p.android.ext/floatingactionbutton/1.10.1/c0a64de83bb9443dd036baabfc7961295d0f0ddd/floatingactionbutton-1.10.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

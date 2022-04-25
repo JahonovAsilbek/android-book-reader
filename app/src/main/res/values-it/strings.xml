@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Book Reader</string>
+
+    <string-array name="viewmode_text">
+        <item>@string/view_mode_paging</item>
+        <item>@string/view_mode_continuous</item>
+    </string-array>
+
+    <string name="loading_book">Carica libro</string>
+    <string name="open_file">Apri file</string>
+    <string name="catalog_home">Home</string>
+    <string name="book_toc">Indice</string>
+    <string name="search">Cerca</string>
+    <string name="book_rename">Rinomina</string>
+    <string name="book_open">Apri</string>
+    <string name="book_delete">Cancella</string>
+    <string name="my_readings">Le mie letture</string>
+    <string name="search_local">Ricerca locale&#8230;</string>
+    <string name="search_book">Cerca libro&#8230;</string>
+    <string name="view_mode_continuous">Modalità continua</string>
+    <string name="view_mode_paging">Modalità a pagine</string>
+
+    <string name="pref_rotate_title">Ruota</string>
+    <string name="pref_rotate_summary">Fai ruotare lo schermo</string>
+    <string name="pref_theme_title">Tema</string>
+    <string name="pref_storagepath_title">Cartella di sincronizzazione</string>
+    <string name="pref_storagepath_summary">Nessuna cartella selezionata</string>
+    <string name="pref_volume_title">Gira con tasti volume</string>
+    <string name="pref_volume_summary">Usa tasti volume per girare le pagine</string>
+
+    <string name="continue_reading">Continua a leggere da:</string>
+    <string name="sync_conflict">Conflitto di sincronizzazione</string>
+    <string name="view_mode">Modalità</string>
+    <string name="image_original_size">Dimensione originale</string>
+    <string name="image_fit_to_screen">Dimensione schermo</string>
+    <string name="image_original_size_all_images">Dimensione originale tutte le immagini</string>
+    <string name="image_fit_to_screen_all_images">Dimensione schermo tutte le immagini</string>
+    <string name="keep_reading_position">Mantieni posizione</string>
+    <string name="add_more_fonts_to">Aggiungi più caratteti a \'%s\'</string>
+    <string name="controls_fullscreen">Schermo intero</string>
+    <string name="controls_navigate">Naviga</string>
+    <string name="controls_nextpage">Pagina successiva</string>
+    <string name="controls_prevpage">Pagina precedente</string>
+    <string name="controls_brightness">Luminosità</string>
+    <string name="per_second">/s</string>
+    <string name="delete_bookmark">Elimina segnalibro</string>
+    <string name="bookmarks">Segnalibri</string>
+    <string name="bookmark_edit">Modifica</string>
+    <string name="book_font">Font</string>
+    <string name="sort_by">Sort By ...</string>
+    <string name="sort_by_name_a_z">Name A-Z</string>
+    <string name="sort_by_name_z_a">Name Z-A</string>
+    <string name="sort_by_added_asc">Added Asc</string>
+    <string name="sort_by_added_desc">Added Desc</string>
+    <string name="sort_by_opened_asc">Opened Asc</string>
+    <string name="sort_by_opened_desc">Opened Desc</string>
+    <string name="pref_tts_title">TTS Language</string>
+</resources>

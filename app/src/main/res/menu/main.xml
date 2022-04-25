@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_search_white_24dp"
+        android:title="@string/search"
+        app:actionViewClass="com.github.axet.androidlibrary.widgets.SearchView"
+        app:showAsAction="collapseActionView|always" />
+    <item
+        android:id="@+id/action_grid"
+        android:icon="@drawable/ic_view_list_black_24dp"
+        android:title="Grid View"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_toc"
+        android:icon="@drawable/ic_toc_white_24dp"
+        android:title="@string/book_toc"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_bm"
+        android:icon="@drawable/ic_bookmark_white_24dp"
+        android:title="@string/bookmarks"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_mode"
+        android:icon="@drawable/ic_view_day_black_24dp"
+        android:title="@string/view_mode_continuous"
+        android:visible="false"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_rtl"
+        android:icon="@drawable/ic_gesture_black_24dp"
+        android:title="LRT"
+        app:actionViewClass="com.github.axet.bookreader.widgets.ToolbarRTLView"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_fontsize"
+        android:icon="@drawable/ic_format_size_white_24dp"
+        android:title="@string/book_font"
+        app:actionViewClass="com.github.axet.bookreader.widgets.ToolbarFontSizeView"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_reflow"
+        android:icon="@drawable/ic_wrap_text_white_24dp"
+        android:title="Reflow"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_theme"
+        android:icon="@drawable/ic_brightness_night_white_24dp"
+        android:title="@string/pref_theme_title"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_debug"
+        android:icon="@drawable/ic_bug_report_black_24dp"
+        android:title="Debug"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_home"
+        android:icon="@drawable/ic_home_white_24dp"
+        android:title="@string/catalog_home"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_tts"
+        android:orderInCategory="100"
+        android:title="TTS"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_sort"
+        android:title="@string/sort_by"
+        app:showAsAction="never">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/sort_name_ask"
+                    android:title="@string/sort_by_name_a_z" />
+                <item
+                    android:id="@+id/sort_name_desc"
+                    android:title="@string/sort_by_name_z_a" />
+                <item
+                    android:id="@+id/sort_add_ask"
+                    android:title="@string/sort_by_added_asc" />
+                <item
+                    android:id="@+id/sort_add_desc"
+                    android:title="@string/sort_by_added_desc" />
+                <item
+                    android:id="@+id/sort_open_ask"
+                    android:title="@string/sort_by_opened_asc" />
+                <item
+                    android:id="@+id/sort_open_desc"
+                    android:title="@string/sort_by_opened_desc" />
+            </group>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/action_file"
+        android:orderInCategory="100"
+        android:title="@string/open_file"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/menu_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_about"
+        android:orderInCategory="100"
+        android:title="@string/menu_about"
+        app:showAsAction="never" />
+</menu>

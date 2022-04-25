@@ -1,0 +1,135 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.2'
+        classpath 'digital.wup:android-maven-publish:3.6.2'
+    }
+}
+
+allprojects {
+    repositories {
+        mavenLocal()
+        google()
+        jcenter()
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+apply plugin: 'signing'
+apply plugin: 'digital.wup.android-maven-publish' // 'gradle publishToMavenLocal' and 'publish' tasks
+
+evaluationDependsOn(":app")
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '28.0.3'
+
+    defaultConfig {
+        minSdkVersion 9
+        targetSdkVersion 23 // 24+ - unable to start intent with 'file://'
+        versionCode = project(':app').android.defaultConfig.versionCode
+        versionName = project(':app').android.defaultConfig.versionName
+        consumerProguardFiles 'proguard-rules.pro'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    sourceSets {
+        main {
+            java {
+                srcDirs += project(':app').android.sourceSets.main.java.srcDirs
+            }
+            res {
+                srcDirs += project(':app').android.sourceSets.main.res.srcDirs
+            }
+        }
+    }
+}
+
+// https://docs.gradle.org/current/userguide/publishing_maven.html
+
+task javadoc(type: Javadoc) {
+    failOnError = false // options.addStringOption('Xdoclint:none', '-quiet')
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(project.android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId 'com.github.axet'
+            artifactId 'android-bookreader-library'
+            version android.defaultConfig.versionName
+
+            from components.android
+            artifact sourcesJar
+            artifact javadocJar
+
+            pom {
+                name = 'Android BookReader Library'
+                description = 'Android BookReader library classes.'
+                url = 'https://gitlab.com/axet/android-book-reader'
+                licenses {
+                    license {
+                        name = 'GNU GENERAL PUBLIC LICENSE 3.0'
+                        url = 'https://www.gnu.org/licenses/gpl-3.0.html'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'axet'
+                        name = 'Alexey Kuznetsov'
+                        email = 'axet@me.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:' + pom.url.get()
+                    developerConnection = 'scm:git:' + pom.url.get()
+                    url = pom.url
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            def releasesRepoUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+            def snapshotsRepoUrl = "https://oss.sonatype.org/content/repositories/snapshots/"
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+            credentials {
+                username project.findProperty('ossrhUsername')
+                password project.findProperty('ossrhPassword')
+            }
+        }
+    }
+}
+
+signing {
+    sign publishing.publications.mavenJava
+}
+
+dependencies {
+}
+
+project.afterEvaluate {
+    project(':app').configurations.resolvableImpl.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+        dependencies.add("api", artifact.moduleVersion.id.toString())
+    }
+}
+

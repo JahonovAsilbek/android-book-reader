@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.axet.fbreader:androidfilechooser:5.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f1f6baf3292956fa87e287c2d20ac5eb/androidfilechooser-5.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f1f6baf3292956fa87e287c2d20ac5eb/androidfilechooser-5.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f1f6baf3292956fa87e287c2d20ac5eb/androidfilechooser-5.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.axet.fbreader/androidfilechooser/5.0/3f14295398bfa3633f536962d695c8b959e3a8cc/androidfilechooser-5.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.axet.fbreader/androidfilechooser/5.0/eb5b52b18ccfb4aac76d3b3fda7a74466a7ba10d/androidfilechooser-5.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

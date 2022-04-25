@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Book Reader</string>
+
+    <string-array name="viewmode_text">
+        <item>@string/view_mode_paging</item>
+        <item>@string/view_mode_continuous</item>
+    </string-array>
+
+    <string name="loading_book">Загрузіць кнігу</string>
+    <string name="open_file">Адкрыць файл</string>
+    <string name="catalog_home">Галоўная</string>
+    <string name="book_toc">Змест</string>
+    <string name="search">Пошук</string>
+    <string name="book_rename">Змяніць імя</string>
+    <string name="book_open">Адкрыць</string>
+    <string name="book_delete">Выдаліць</string>
+    <string name="my_readings">Адкрытыя кнігі</string>
+    <string name="search_local">Лакальны пошук&#8230;</string>
+    <string name="search_book">Пошук кніг&#8230;</string>
+    <string name="view_mode_continuous">Безперапынны выгляд</string>
+    <string name="view_mode_paging">Пастаронкавы выгляд</string>
+
+    <string name="pref_rotate_title">Павярнуць</string>
+    <string name="pref_rotate_summary">Дазволіць паварот экрану</string>
+    <string name="pref_theme_title">Тэма</string>
+    <string name="pref_storagepath_title">Папка сінхранізацыі</string>
+    <string name="pref_storagepath_summary">Не выбрана \'Папка сінхранізацыі\'</string>
+    <string name="pref_volume_title">Кнопкі гучнасці для перагортвання</string>
+    <string name="pref_volume_summary">Выкарысоўваць кнопкі гучнасці для перагортвання старонак</string>
+
+    <string name="continue_reading">Працягнуць чытанне з:</string>
+    <string name="sync_conflict">Канфлікт сінхранізацыі</string>
+    <string name="view_mode">Рэжым прагляду</string>
+    <string name="image_original_size">Арыгінальны памер</string>
+    <string name="image_fit_to_screen">Прыпасаваць да экрану</string>
+    <string name="image_original_size_all_images">Арыгінальны памер усіх выяў</string>
+    <string name="image_fit_to_screen_all_images">Прыпасаваць да экрану ўсе выявы</string>
+    <string name="keep_reading_position">Захаваць пазіцыю</string>
+    <string name="add_more_fonts_to">Дадаць больш шрыфтоў  \'%s\'</string>
+    <string name="controls_fullscreen">Поўнаэкранны рэжым</string>
+    <string name="controls_navigate">Навігацыя</string>
+    <string name="controls_nextpage">Насупная старонка</string>
+    <string name="controls_prevpage">Папярэняя старонка</string>
+    <string name="controls_brightness">Яркасць</string>
+    <string name="per_second">/с</string>
+    <string name="delete_bookmark">Выдаліць закладку</string>
+    <string name="bookmarks">Закладкі</string>
+    <string name="bookmark_edit">Змяніць закладкі</string>
+    <string name="book_font">Шрыфт</string>
+    <string name="sort_by">Сартаваць па ...</string>
+    <string name="sort_by_name_a_z">Імя А-Я</string>
+    <string name="sort_by_name_z_a">Імя Я-А</string>
+    <string name="sort_by_added_asc">Дадана па ўзрастанні</string>
+    <string name="sort_by_added_desc">Дадана па памяншэнню</string>
+    <string name="sort_by_opened_asc">Адкрыта па ўзрастанні</string>
+    <string name="sort_by_opened_desc">Адкрыта па памяншэнню</string>
+    <string name="pref_tts_title">TTS Language</string>
+</resources>

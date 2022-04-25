@@ -1,0 +1,51 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.github.axet.bookreader.widgets.StoragePathPreferenceCompat
+        android:defaultValue="My Readings"
+        android:key="storage_path"
+        android:summary="@string/pref_storagepath_summary"
+        android:title="@string/pref_storagepath_title" />
+
+    <ListPreference
+        android:defaultValue="PAGING"
+        android:entries="@array/viewmode_text"
+        android:entryValues="@array/viewmode_value"
+        android:key="view_mode"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/view_mode" />
+
+    <SwitchPreferenceCompat
+        android:defaultValue="false"
+        android:key="volume_keys"
+        android:summary="@string/pref_volume_summary"
+        android:title="@string/pref_volume_title" />
+
+    <com.github.axet.androidlibrary.preferences.ScreenlockPreference
+        android:defaultValue="0"
+        android:entries="@array/screen_lock_text"
+        android:entryValues="@array/screen_lock_values"
+        android:key="screen_lock"
+        android:summary=""
+        android:title="@string/pref_screenlock_title" />
+
+    <com.github.axet.androidlibrary.preferences.RotatePreferenceCompat
+        android:defaultValue="false"
+        android:key="rotate"
+        android:summary="@string/pref_rotate_summary"
+        android:title="@string/pref_rotate_title" />
+
+    <com.github.axet.androidlibrary.preferences.TTSPreferenceCompat
+        android:key="tts_pref"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_tts_title" />
+
+    <ListPreference
+        android:defaultValue="@string/Theme_System"
+        android:entries="@array/themes_text"
+        android:entryValues="@array/themes_values"
+        android:key="theme"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_theme_title" />
+</PreferenceScreen>

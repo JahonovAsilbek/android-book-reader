@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Book Reader</string>
+
+    <string name="loading_book">Chargement</string>
+    <string name="open_file">Ouvrir un fichier</string>
+    <string name="catalog_home">Accueil</string>
+    <string name="book_toc">Table des matières</string>
+    <string name="search">Rechercher</string>
+    <string name="book_rename">Renommer</string>
+    <string name="book_open">Ouvrir</string>
+    <string name="book_delete">Supprimer</string>
+    <string name="my_readings">Mes lectures</string>
+    <string name="search_local">Recherche locale&#8230;</string>
+    <string name="search_book">Rechercher un livre&#8230;</string>
+    <string name="pref_theme_title">Thème</string>
+    <string name="pref_rotate_title">Rotation</string>
+    <string name="pref_rotate_summary">L\'écran peut tourner</string>
+    <string name="view_mode_continuous">Continu</string>
+    <string name="view_mode_paging">Par page</string>
+    <string name="pref_storagepath_title">Dossier de synchro</string>
+    <string name="pref_storagepath_summary">Aucun dossier de syncro sélectionné</string>
+    <string name="continue_reading">Lire à partir de :</string>
+    <string name="sync_conflict">Conflit de synchro</string>
+    <string name="view_mode">Mode d\'affichage</string>
+    <string name="image_original_size">Taille d\'image originale</string>
+    <string name="image_fit_to_screen">Taille d\'image adaptée</string>
+    <string name="image_original_size_all_images">Images en tailles originales</string>
+    <string name="image_fit_to_screen_all_images">Images adaptées à l\'écran</string>
+    <string name="keep_reading_position">Garder la position</string>
+    <string name="add_more_fonts_to">Plus de polices pour « %s »</string>
+    <string name="controls_fullscreen">Plein écran</string>
+    <string name="controls_navigate">Naviguer</string>
+    <string name="controls_nextpage">Page suivante</string>
+    <string name="controls_prevpage">Page précédente</string>
+    <string name="controls_brightness">Luminosité</string>
+    <string name="per_second">/s</string>
+    <string name="delete_bookmark">Supprimer le marque-page</string>
+    <string name="bookmarks">Marque-pages</string>
+    <string name="pref_volume_title">Tourner par ctr. volume</string>
+    <string name="pref_volume_summary">Changer la page via touches volumes</string>
+    <string name="bookmark_edit">Éditer</string>
+    <string name="book_font">Police</string>
+    <string name="sort_by">Sort By ...</string>
+    <string name="sort_by_name_a_z">Name A-Z</string>
+    <string name="sort_by_name_z_a">Name Z-A</string>
+    <string name="sort_by_added_asc">Added Asc</string>
+    <string name="sort_by_added_desc">Added Desc</string>
+    <string name="sort_by_opened_asc">Opened Asc</string>
+    <string name="sort_by_opened_desc">Opened Desc</string>
+    <string name="pref_tts_title">TTS Language</string>
+</resources>
+

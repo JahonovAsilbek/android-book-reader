@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.axet:libdjvu:3.5.27-4@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2914b982e23d65cb3fac5f439b191505/libdjvu-3.5.27-4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2914b982e23d65cb3fac5f439b191505/libdjvu-3.5.27-4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2914b982e23d65cb3fac5f439b191505/libdjvu-3.5.27-4/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

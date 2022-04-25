@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_open"
+        android:orderInCategory="100"
+        android:title="@string/book_open"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_share"
+        android:orderInCategory="100"
+        android:title="@string/ShareAction"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_original"
+        android:orderInCategory="100"
+        android:title="@string/image_original_size"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_zoom"
+        android:orderInCategory="100"
+        android:title="@string/image_fit_to_screen"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_original_all"
+        android:orderInCategory="100"
+        android:title="@string/image_original_size_all_images"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_zoom_all"
+        android:orderInCategory="100"
+        android:title="@string/image_fit_to_screen_all_images"
+        app:showAsAction="never" />
+</menu>

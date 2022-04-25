@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.axet:java-unrar:1.7.0-4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.axet/java-unrar/1.7.0-4/6d551d432c459c6448cbeaf306060827d2c5e774/java-unrar-1.7.0-4.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.axet/java-unrar/1.7.0-4/84e7d0eaaf0be0b1c1a34d3888375b5909961de1/java-unrar-1.7.0-4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.axet/java-unrar/1.7.0-4/24d05969333f2b2d15f1732e8e0f4921c59343ca/java-unrar-1.7.0-4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
