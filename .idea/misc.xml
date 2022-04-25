@@ -3,7 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/drawable/library_rating_bg.xml" value="0.1675" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.23958333333333334" />
         <entry key="app/src/main/res/layout/bm_color.xml" value="0.23958333333333334" />
         <entry key="app/src/main/res/layout/bm_item.xml" value="0.23958333333333334" />
@@ -22,7 +21,6 @@
         <entry key="app/src/main/res/layout/toc_item.xml" value="0.23958333333333334" />
         <entry key="app/src/main/res/layout/tts_popup.xml" value="0.23958333333333334" />
         <entry key="app/src/main/res/menu/main.xml" value="0.23958333333333334" />
-        <entry key="app/src/main/res/xml/pref_general.xml" value="0.4486679077148437" />
       </map>
     </option>
   </component>
