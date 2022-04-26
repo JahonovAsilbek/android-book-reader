@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.PowerManager;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -1199,6 +1200,8 @@ public class ScrollWidget extends RecyclerView implements ZLViewWidget {
             if (fb.tts != null)
                 fb.tts.onScrollingFinished(ZLViewEnums.PageIndex.current);
         }
+        Log.d("AAAA", "updatePosition current: " + fb.footer.pagePosition.Current);
+        Log.d("AAAA", "updatePosition total  : " + fb.footer.pagePosition.Total);
     }
 
     void drawFooter(Canvas c) {

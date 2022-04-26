@@ -3,6 +3,40 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../.gradle/caches/transforms-2/files-2.1/cb79f28247a0788f4becc6c307397a65/jetified-android-library-1.35.18/res/drawable/toolbar_icon_light.xml" value="0.1675" />
+        <entry key="../../.gradle/caches/transforms-2/files-2.1/cb79f28247a0788f4becc6c307397a65/jetified-android-library-1.35.18/res/drawable/toolbar_icon_round_light.xml" value="0.1675" />
+        <entry key="../../Library/Android/sdk/platforms/android-32/data/res/layout/select_dialog_singlechoice.xml" value="0.25" />
+        <entry key="app/src/main/res/drawable-v21/ic_menu_gallery.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_bookmark_white_24dp.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_brightness_day_white_24dp.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_brightness_night_white_24dp.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_bug_report_black_24dp.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_check_black_24dp.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_expand_less_black_24dp.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_expand_more_black_24dp.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_fiber_new_black_24dp.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_format_size_white_24dp.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_gesture_black_24dp.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_home_white_24dp.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_outline_pause_24.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_outline_play_arrow_24.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_remove_black_24dp.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_search_black_24dp.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_search_white_24dp.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_star_black_24dp.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_stop_black_24dp.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_toc_black_24dp.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_toc_white_24dp.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_view_carousel_black_24dp.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_view_day_black_24dp.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_view_list_black_24dp.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_view_module_black_24dp.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/ic_wrap_text_white_24dp.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/library_rating_bg.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/library_rating_bg_round_light.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/side_nav_bar_dark.xml" value="0.1675" />
+        <entry key="app/src/main/res/drawable/side_nav_bar_light.xml" value="0.1675" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.23958333333333334" />
         <entry key="app/src/main/res/layout/bm_color.xml" value="0.23958333333333334" />
         <entry key="app/src/main/res/layout/bm_item.xml" value="0.23958333333333334" />
@@ -20,7 +54,12 @@
         <entry key="app/src/main/res/layout/recent_item.xml" value="0.23958333333333334" />
         <entry key="app/src/main/res/layout/toc_item.xml" value="0.23958333333333334" />
         <entry key="app/src/main/res/layout/tts_popup.xml" value="0.23958333333333334" />
+        <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/bookitem_menu.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/bookmark_menu.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/image_menu.xml" value="0.25" />
         <entry key="app/src/main/res/menu/main.xml" value="0.23958333333333334" />
+        <entry key="app/src/main/res/xml/pref_general.xml" value="0.4486679077148437" />
       </map>
     </option>
   </component>

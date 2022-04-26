@@ -3,7 +3,6 @@ package com.github.axet.bookreader.app;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.AssetFileDescriptor;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -12,7 +11,6 @@ import android.os.Build;
 import android.os.ParcelFileDescriptor;
 import android.preference.PreferenceManager;
 import android.provider.DocumentsContract;
-import android.provider.MediaStore;
 import android.provider.Settings;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -23,7 +21,6 @@ import android.widget.TextView;
 import com.github.axet.androidlibrary.app.AlarmManager;
 import com.github.axet.androidlibrary.app.FileTypeDetector;
 import com.github.axet.androidlibrary.app.RarSAF;
-import com.github.axet.androidlibrary.net.HttpClient;
 import com.github.axet.androidlibrary.widgets.CacheImagesAdapter;
 import com.github.axet.androidlibrary.widgets.WebViewCustom;
 import com.github.axet.bookreader.R;
@@ -70,8 +67,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -225,7 +220,7 @@ public class Storage extends com.github.axet.androidlibrary.app.Storage {
 
     public Uri recentUri(Book book) {
         String s = book.url.getScheme();
-        if (Build.VERSION.SDK_INT >= 21 && s.equals(ContentResolver.SCHEME_CONTENT)) {
+        if (s.equals(ContentResolver.SCHEME_CONTENT)) {
             String id = book.md5 + "." + JSON_EXT;
             Uri doc = Storage.getDocumentParent(context, book.url);
             return child(context, doc, id);
@@ -240,7 +235,7 @@ public class Storage extends com.github.axet.androidlibrary.app.Storage {
         List<Uri> list = new ArrayList<>();
         Uri storage = getStoragePath();
         String s = storage.getScheme();
-        if (Build.VERSION.SDK_INT >= 21 && s.equals(ContentResolver.SCHEME_CONTENT)) {
+        if (s.equals(ContentResolver.SCHEME_CONTENT)) {
             ContentResolver contentResolver = context.getContentResolver();
             Uri childrenUri = DocumentsContract.buildChildDocumentsUriUsingTree(storage, DocumentsContract.getTreeDocumentId(storage));
             Cursor childCursor = contentResolver.query(childrenUri, null, null, null, null);
@@ -662,7 +657,7 @@ public class Storage extends com.github.axet.androidlibrary.app.Storage {
         book.info.last = System.currentTimeMillis();
         Uri u = recentUri(book);
         String s = u.getScheme();
-        if (Build.VERSION.SDK_INT >= 21 && s.equals(ContentResolver.SCHEME_CONTENT)) {
+        if (s.equals(ContentResolver.SCHEME_CONTENT)) {
             Uri root = Storage.getDocumentTreeUri(u);
             String id = DocumentsContract.getTreeDocumentId(u);
             String path;
@@ -758,17 +753,17 @@ public class Storage extends com.github.axet.androidlibrary.app.Storage {
 //                throw new RuntimeException(e);
 //            }
 //        } else { // file:// or /path/file
-            File f = getFile(uri);
-            try {
-                FileInputStream fis = new FileInputStream(f);
-                InputStream is = fis;
-                is = new BufferedInputStream(is);
-                if (progress != null)
-                    is = new ProgresInputstream(is, fis.getChannel().size(), progress);
-                book = load(is, Uri.fromFile(f));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+        File f = getFile(uri);
+        try {
+            FileInputStream fis = new FileInputStream(f);
+            InputStream is = fis;
+            is = new BufferedInputStream(is);
+            if (progress != null)
+                is = new ProgresInputstream(is, fis.getChannel().size(), progress);
+            book = load(is, Uri.fromFile(f));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 //        }
         Uri r = recentUri(book);
         if (exists(context, r)) {
@@ -810,7 +805,7 @@ public class Storage extends com.github.axet.androidlibrary.app.Storage {
 
         String s = storage.getScheme();
 
-        if (Build.VERSION.SDK_INT >= 21 && s.equals(ContentResolver.SCHEME_CONTENT) && DocumentsContract.isDocumentUri(context, u)) {
+        if (s.equals(ContentResolver.SCHEME_CONTENT) && DocumentsContract.isDocumentUri(context, u)) {
             if (DocumentsContract.getDocumentId(u).startsWith(DocumentsContract.getTreeDocumentId(storage))) // else we can't get from content://storage to real path
                 return new Book(context, DocumentsContract.buildDocumentUriUsingTree(storage, DocumentsContract.getDocumentId(u)));
         }
@@ -894,7 +889,7 @@ public class Storage extends com.github.axet.androidlibrary.app.Storage {
                 }
             }
 
-            if (Build.VERSION.SDK_INT >= 21 && s.equals(ContentResolver.SCHEME_CONTENT)) {
+            if (s.equals(ContentResolver.SCHEME_CONTENT)) {
                 ContentResolver contentResolver = context.getContentResolver();
                 Uri childrenUri = DocumentsContract.buildChildDocumentsUriUsingTree(storage, DocumentsContract.getTreeDocumentId(storage));
                 Cursor childCursor = contentResolver.query(childrenUri, null, null, null, null);
@@ -1103,7 +1098,7 @@ public class Storage extends com.github.axet.androidlibrary.app.Storage {
         Uri uri = getStoragePath();
         ArrayList<Book> list = new ArrayList<>();
         String s = uri.getScheme();
-        if (Build.VERSION.SDK_INT >= 21 && s.equals(ContentResolver.SCHEME_CONTENT)) {
+        if (s.equals(ContentResolver.SCHEME_CONTENT)) {
             ContentResolver contentResolver = context.getContentResolver();
             Uri childrenUri = DocumentsContract.buildChildDocumentsUriUsingTree(uri, DocumentsContract.getTreeDocumentId(uri));
             Cursor childCursor = contentResolver.query(childrenUri, null, null, null, null);
@@ -1171,7 +1166,7 @@ public class Storage extends com.github.axet.androidlibrary.app.Storage {
         // delete all md5.* files (old, cover images, and sync conflicts files)
         Uri storage = getStoragePath();
         String s = storage.getScheme();
-        if (Build.VERSION.SDK_INT >= 21 && s.equals(ContentResolver.SCHEME_CONTENT)) {
+        if (s.equals(ContentResolver.SCHEME_CONTENT)) {
             ContentResolver contentResolver = context.getContentResolver();
             Uri childrenUri = DocumentsContract.buildChildDocumentsUriUsingTree(storage, DocumentsContract.getTreeDocumentId(storage));
             Cursor childCursor = contentResolver.query(childrenUri, null, null, null, null);
@@ -1345,7 +1340,7 @@ public class Storage extends com.github.axet.androidlibrary.app.Storage {
             InputStream is;
             OutputStream os;
             String s = u.getScheme();
-            if (Build.VERSION.SDK_INT >= 21 && s.equals(ContentResolver.SCHEME_CONTENT)) {
+            if (s.equals(ContentResolver.SCHEME_CONTENT)) {
                 ContentResolver resolver = getContext().getContentResolver();
                 is = resolver.openInputStream(u);
                 n = createFile(context, dir, Storage.getDocumentChildPath(n));

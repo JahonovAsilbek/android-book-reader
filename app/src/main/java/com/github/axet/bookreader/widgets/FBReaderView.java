@@ -147,14 +147,9 @@ public class FBReaderView extends RelativeLayout {
     public static void showControls(final ViewGroup p, final View areas) {
         p.removeCallbacks((Runnable) areas.getTag());
         p.addView(areas);
-        Runnable hide = new Runnable() {
-            @Override
-            public void run() {
-                hideControls(p, areas);
-            }
-        };
+        Runnable hide = () -> hideControls(p, areas);
         areas.setTag(hide);
-        p.postDelayed(hide, 3000);
+        p.postDelayed(hide, 5000);
     }
 
     public static void hideControls(final ViewGroup p, final View areas) {

@@ -68,11 +68,12 @@ public class SettingsActivity extends AppCompatSettingsThemeActivity {
             bindPreferenceSummaryToValue(findPreference(BookApplication.PREFERENCE_THEME));
             bindPreferenceSummaryToValue(findPreference(BookApplication.PREFERENCE_VIEW_MODE));
 
-            StoragePathPreferenceCompat s = (StoragePathPreferenceCompat) findPreference(BookApplication.PREFERENCE_STORAGE);
-            s.setStorage(new Storage(getContext()));
-            s.setPermissionsDialog(this, Storage.PERMISSIONS_RW, RESULT_STORAGE);
-            if (Build.VERSION.SDK_INT >= 21)
-                s.setStorageAccessFramework(this, RESULT_STORAGE);
+            // sync from device storage
+//            StoragePathPreferenceCompat s = (StoragePathPreferenceCompat) findPreference(BookApplication.PREFERENCE_STORAGE);
+//            s.setStorage(new Storage(getContext()));
+//            s.setPermissionsDialog(this, Storage.PERMISSIONS_RW, RESULT_STORAGE);
+//            if (Build.VERSION.SDK_INT >= 21)
+//                s.setStorageAccessFramework(this, RESULT_STORAGE);
         }
 
         @Override

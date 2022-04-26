@@ -62,9 +62,7 @@ import com.github.axet.bookreader.widgets.ToolbarButtonView;
 
 import org.geometerplus.fbreader.bookmodel.TOCTree;
 import org.geometerplus.fbreader.fbreader.ActionCode;
-import org.geometerplus.zlibrary.core.util.ZLTTFInfoDetector;
 import org.geometerplus.zlibrary.core.view.ZLViewEnums;
-import org.geometerplus.zlibrary.ui.android.view.AndroidFontUtil;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -73,7 +71,6 @@ import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.TreeSet;
 
 public class ReaderFragment extends Fragment implements MainActivity.SearchListener, SharedPreferences.OnSharedPreferenceChangeListener, FullscreenActivity.FullscreenListener, MainActivity.OnBackPressed {
     public static final String TAG = ReaderFragment.class.getSimpleName();
@@ -133,7 +130,6 @@ public class ReaderFragment extends Fragment implements MainActivity.SearchListe
         FontAdapter fonts;
         View fontsFrame;
         RecyclerView fontsList;
-        TextView fontsText;
         View fontsize_popup;
         TextView fontsizepopup_text;
         SeekBar fontsizepopup_seek;
@@ -147,16 +143,11 @@ public class ReaderFragment extends Fragment implements MainActivity.SearchListe
             fontsizepopup_minus = fontsize_popup.findViewById(R.id.fontsize_minus);
             fontsizepopup_seek = (SeekBar) fontsize_popup.findViewById(R.id.fontsize_seek);
             fonts = new FontAdapter(context);
-            fonts.clickListener = new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    fonts.select(position);
-                    setFont(fonts.ff.get(position).name);
-                }
+            fonts.clickListener = (parent, view, position, id) -> {
+                fonts.select(position);
+                setFont(fonts.ff.get(position).name);
             };
             fontsFrame = fontsize_popup.findViewById(R.id.fonts_frame);
-            fontsText = (TextView) fontsize_popup.findViewById(R.id.fonts_text);
-            fontsText.setText(context.getString(R.string.add_more_fonts_to, FONTS.toString()));
             fontsList = (RecyclerView) fontsize_popup.findViewById(R.id.fonts_list);
             fontsList.setLayoutManager(new LinearLayoutManager(context));
             setContentView(fontsize_popup);
@@ -176,27 +167,29 @@ public class ReaderFragment extends Fragment implements MainActivity.SearchListe
             fontsList.setAdapter(fonts);
             fonts.addBasics();
             List<File> files = new ArrayList<>();
-            for (String f : enumerateFonts().keySet())
-                files.add(new File(f));
-            AndroidFontUtil.ourFileSet = new TreeSet<>();
-            AndroidFontUtil.ourFontFileMap = new ZLTTFInfoDetector().collectFonts(files);
-            for (String s : AndroidFontUtil.ourFontFileMap.keySet()) {
-                File[] ff = AndroidFontUtil.ourFontFileMap.get(s);
-                for (File f : ff) {
-                    if (f != null) {
-                        fonts.ff.add(new FontView(s, f));
-                        break; // regular first
-                    }
-                }
-            }
+//            for (String f : enumerateFonts().keySet())
+//                files.add(new File(f));
+//            AndroidFontUtil.ourFileSet = new TreeSet<>();
+//            AndroidFontUtil.ourFontFileMap = new ZLTTFInfoDetector().collectFonts(files);
+//            for (String s : AndroidFontUtil.ourFontFileMap.keySet()) {
+//                File[] ff = AndroidFontUtil.ourFontFileMap.get(s);
+//                for (File f : ff) {
+//                    if (f != null && f.exists()) {
+//                        fonts.ff.add(new FontView(s, f));
+//                        break; // regular first
+//                    }
+//                }
+//            }
         }
 
         public void updateFontsize(final int start, final int end, int f) {
+            Log.d("AAAA", "setFontsize: ");
             fontsizepopup_seek.setMax(end - start);
             fontsizepopup_seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                    updateFontsize(progress + start);
+//                    updateFontsize(progress + start);
+                    Log.d("AAAA", "onprogresschanged: ");
                 }
 
                 @Override
@@ -210,16 +203,13 @@ public class ReaderFragment extends Fragment implements MainActivity.SearchListe
                 }
             });
             fontsizepopup_seek.setProgress(f - start);
-            fontsizepopup_minus.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int p = fontsizepopup_seek.getProgress();
-                    p--;
-                    if (p < 0)
-                        p = 0;
-                    fontsizepopup_seek.setProgress(p);
-                    setFontsize(start + p);
-                }
+            fontsizepopup_minus.setOnClickListener(v -> {
+                int p = fontsizepopup_seek.getProgress();
+                p--;
+                if (p < 0)
+                    p = 0;
+                fontsizepopup_seek.setProgress(p);
+                setFontsize(start + p);
             });
             fontsizepopup_plus.setOnClickListener(v -> {
                 int p = fontsizepopup_seek.getProgress();
@@ -568,10 +558,11 @@ public class ReaderFragment extends Fragment implements MainActivity.SearchListe
         return fonts.isEmpty() ? null : fonts;
     }
 
-    public static ReaderFragment newInstance(Uri uri) {
+    public static ReaderFragment newInstance(Uri uri, String bookName) {
         ReaderFragment fragment = new ReaderFragment();
         Bundle args = new Bundle();
         args.putParcelable("uri", uri);
+        args.putString("bookName", bookName);
         fragment.setArguments(args);
         return fragment;
     }
@@ -605,6 +596,20 @@ public class ReaderFragment extends Fragment implements MainActivity.SearchListe
         final View v = inflater.inflate(R.layout.fragment_reader, container, false);
 
         final MainActivity main = (MainActivity) getActivity();
+        if (main != null) {
+            String bookName = getArguments().getString("bookName", getString(R.string.app_name));
+            main.toolbar.setTitle(bookName);
+//            TypedValue value = new TypedValue();
+//            getContext().getTheme().resolveAttribute(R.attr.text_color, value, true);
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                main.toolbar.getOverflowIcon().setTint(value.data);
+//            }
+//            TypedValue value2 = new TypedValue();
+//            getContext().getTheme().resolveAttribute(R.attr.toolbar_color, value2, true);
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                main.getWindow().setStatusBarColor(value2.data);
+//            }
+        }
         fb = (FBReaderView) v.findViewById(R.id.main_view);
 
         fb.listener = new FBReaderView.Listener() {
@@ -658,24 +663,18 @@ public class ReaderFragment extends Fragment implements MainActivity.SearchListe
                 fb.gotoPosition(pos);
         } catch (RuntimeException e) {
             ErrorDialog.Error(main, e);
-            handler.post(new Runnable() { // or openLibrary crash with java.lang.IllegalStateException on FragmentActivity.onResume
-                @Override
-                public void run() {
-                    if (!main.isFinishing())
-                        main.openLibrary();
-                }
-            });
+            // finish activity when book don't open
+            if (main != null) {
+                handler.post(main::finish);
+            }
             return v; // ignore post called
         }
 
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                if (getActivity().isFinishing())
-                    return;
-                updateToolbar(); // update toolbar after page been drawn to detect RTL
-                fb.showControls(); //  update toolbar after page been drawn, getWidth() == 0
-            }
+        handler.post(() -> {
+            if (getActivity().isFinishing())
+                return;
+            updateToolbar(); // update toolbar after page been drawn to detect RTL
+            fb.showControls(); //  update toolbar after page been drawn, getWidth() == 0
         });
 
         return v;
@@ -869,6 +868,8 @@ public class ReaderFragment extends Fragment implements MainActivity.SearchListe
                         fontsizepopup_text.setText(Integer.toString(f));
                     }
                 };
+
+
                 fontsPopup.loadFonts();
                 fontsPopup.fonts.select(fb.app.ViewOptions.getTextStyleCollection().getBaseStyle().FontFamilyOption.getValue());
                 fontsPopup.fontsList.scrollToPosition(fontsPopup.fonts.selected);
@@ -949,7 +950,7 @@ public class ReaderFragment extends Fragment implements MainActivity.SearchListe
         MenuItem grid = menu.findItem(R.id.action_grid);
         MenuItem mode = menu.findItem(R.id.action_mode);
         MenuItem theme = menu.findItem(R.id.action_theme);
-        MenuItem sort = menu.findItem(R.id.action_sort);
+//        MenuItem sort = menu.findItem(R.id.action_sort);
         MenuItem tts = menu.findItem(R.id.action_tts);
 
         boolean search;
@@ -970,7 +971,7 @@ public class ReaderFragment extends Fragment implements MainActivity.SearchListe
 
         grid.setVisible(false);
         homeMenu.setVisible(false);
-        sort.setVisible(false);
+//        sort.setVisible(false);
         tocMenu.setVisible(fb.app.Model != null && fb.app.Model.TOCTree != null && fb.app.Model.TOCTree.hasChildren());
         searchMenu.setVisible(search);
         reflow.setVisible(fb.pluginview != null && !(fb.pluginview instanceof ComicsPlugin.ComicsView));

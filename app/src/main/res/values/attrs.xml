@@ -10,6 +10,10 @@
     </declare-styleable>
 
     <attr name="side_nav_bar" format="reference" />
+    <declare-styleable name="color">
+        <attr name="toolbar_color" format="color" />
+        <attr name="text_color" format="color" />
+    </declare-styleable>
 
     <string-array name="viewmode_value" translatable="false">
         <item>PAGING</item>

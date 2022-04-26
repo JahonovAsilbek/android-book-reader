@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 32
     ndkVersion '16.1.4479499' // stripReleaseDebugSymbols
     defaultConfig {
         applicationId "com.github.axet.bookreader"
-        minSdkVersion 14
-        targetSdkVersion 31
+        minSdkVersion 21
+        targetSdkVersion 32
         versionCode 412
         versionName "1.14.3"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
@@ -53,6 +53,7 @@ configurations { // TODO fix library dependency copy
 }
 
 dependencies {
+    implementation 'androidx.test.ext:junit:1.1.3'
     testImplementation 'junit:junit:4+'
     implementation 'com.github.axet:android-library:1.35.18' // implementation project(':android-library')
     implementation 'com.google.android.material:material:1.5.0'

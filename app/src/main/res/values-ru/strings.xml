@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Книги</string>
 
     <string name="loading_book">Загрузка книги</string>
     <string name="open_file">Открыть файл</string>

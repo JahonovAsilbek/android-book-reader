@@ -17,15 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="200dp" />
 
-        <TextView
-            android:id="@+id/fonts_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:text="@string/add_more_fonts_to"
-            android:textSize="12sp" />
     </LinearLayout>
 
     <TextView

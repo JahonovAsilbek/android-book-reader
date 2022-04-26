@@ -2,17 +2,18 @@ package com.github.axet.bookreader.activities;
 
 import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -25,25 +26,23 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.github.axet.androidlibrary.app.FileTypeDetector;
-import com.github.axet.androidlibrary.preferences.AboutPreferenceCompat;
 import com.github.axet.androidlibrary.preferences.RotatePreferenceCompat;
 import com.github.axet.androidlibrary.widgets.CacheImagesAdapter;
 import com.github.axet.androidlibrary.widgets.ErrorDialog;
 import com.github.axet.androidlibrary.widgets.OpenChoicer;
-import com.github.axet.androidlibrary.widgets.OpenFileDialog;
 import com.github.axet.androidlibrary.widgets.SearchView;
 import com.github.axet.androidlibrary.widgets.ThemeUtils;
 import com.github.axet.androidlibrary.widgets.WebViewCustom;
 import com.github.axet.bookreader.R;
 import com.github.axet.bookreader.app.BookApplication;
 import com.github.axet.bookreader.app.Storage;
-import com.github.axet.bookreader.fragments.LibraryFragment;
 import com.github.axet.bookreader.fragments.ReaderFragment;
 import com.github.axet.bookreader.widgets.FBReaderView;
 import com.google.android.material.internal.NavigationMenuItemView;
@@ -53,7 +52,6 @@ import org.geometerplus.fbreader.fbreader.options.ImageOptions;
 import org.geometerplus.fbreader.fbreader.options.MiscOptions;
 import org.geometerplus.zlibrary.text.view.ZLTextPosition;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -70,7 +68,8 @@ public class MainActivity extends FullscreenActivity implements NavigationView.O
     boolean isRunning;
     OpenChoicer choicer;
     String lastSearch;
-    LibraryFragment libraryFragment = LibraryFragment.newInstance();
+    String bookName;
+    //    LibraryFragment libraryFragment = LibraryFragment.newInstance();
     public boolean volumeEnabled = true; // tmp enabled / disable volume keys
 
     BroadcastReceiver receiver = new BroadcastReceiver() {
@@ -208,7 +207,10 @@ public class MainActivity extends FullscreenActivity implements NavigationView.O
         registerReceiver(receiver, new IntentFilter(FBReaderView.ACTION_MENU));
 
         if (savedInstanceState == null && getIntent().getParcelableExtra(SAVE_INSTANCE_STATE) == null) {
-            openLibrary();
+//            openLibrary();
+            bookName = "1984";
+            setToolbar(bookName);
+            openBook();
             openIntent(getIntent());
         }
 
@@ -216,6 +218,20 @@ public class MainActivity extends FullscreenActivity implements NavigationView.O
 
         SharedPreferences shared = PreferenceManager.getDefaultSharedPreferences(this);
         shared.registerOnSharedPreferenceChangeListener(this);
+
+    }
+
+    private void setToolbar(String bookName) {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle(bookName);
+        TypedValue value = new TypedValue();
+        getTheme().resolveAttribute(R.attr.text_color, value, true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            toolbar.getOverflowIcon().setTint(value.data);
+        }
+        TypedValue value2 = new TypedValue();
+        getTheme().resolveAttribute(R.attr.toolbar_color, value2, true);
+        getWindow().setStatusBarColor(value2.data);
     }
 
     @SuppressLint("RestrictedApi")
@@ -229,6 +245,9 @@ public class MainActivity extends FullscreenActivity implements NavigationView.O
                     OnBackPressed s = (OnBackPressed) f;
                     if (s.onBackPressed())
                         return;
+                }
+                if (f instanceof ReaderFragment) {
+                    finish();
                 }
             }
         }
@@ -320,10 +339,10 @@ public class MainActivity extends FullscreenActivity implements NavigationView.O
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.action_about) {
-            AboutPreferenceCompat.buildDialog(this, R.raw.about).show();
-            return true;
-        }
+//        if (id == R.id.action_about) {
+//            AboutPreferenceCompat.buildDialog(this, R.raw.about).show();
+//            return true;
+//        }
 
         if (id == R.id.action_settings) {
             SettingsActivity.startActivity(this);
@@ -331,43 +350,43 @@ public class MainActivity extends FullscreenActivity implements NavigationView.O
         }
 
         final SharedPreferences shared = PreferenceManager.getDefaultSharedPreferences(this);
-        if (id == R.id.action_file) {
-            String last = shared.getString(BookApplication.PREFERENCE_LAST_PATH, null);
-            Uri old = null;
-            if (last != null) {
-                old = Uri.parse(last);
-                File f = Storage.getFile(old);
-                while (f != null && !f.exists())
-                    f = f.getParentFile();
-                if (f != null)
-                    old = Uri.fromFile(f);
-            } else {
-                old = Uri.parse(ContentResolver.SCHEME_CONTENT + Storage.CSS); // show SAF default
-            }
-            choicer = new OpenChoicer(OpenFileDialog.DIALOG_TYPE.FILE_DIALOG, true) {
-                @Override
-                public void onResult(Uri uri) {
-//                    String s = uri.getScheme();
-                    Log.d("AAAA", "onResult:" + uri.getPath());
-                    Log.d("AAAA", "onResult:" + uri.getScheme());
-                    String s = "/data/data/com.github.axet.bookreader/files/1984.epub";
-                    Uri uri1 = Uri.parse(s);
-                    Log.d("AAAA", "onResult scheme: "+uri1.getScheme());
-//                    String s = uri.getScheme();
-//                    if (s.equals(ContentResolver.SCHEME_FILE)) {
-//                        File f = Storage.getFile(uri);
-//                        f = f.getParentFile();
-//                        SharedPreferences.Editor editor = shared.edit();
-//                        editor.putString(BookApplication.PREFERENCE_LAST_PATH, f.toString());
-//                        editor.commit();
-//                    }
-                    loadBook(uri1, null);
-                }
-            };
-            choicer.setStorageAccessFramework(this, RESULT_FILE);
-            choicer.setPermissionsDialog(this, Storage.PERMISSIONS_RO, RESULT_FILE);
-            choicer.show(old);
-        }
+//        if (id == R.id.action_file) {
+//            String last = shared.getString(BookApplication.PREFERENCE_LAST_PATH, null);
+//            Uri old = null;
+//            if (last != null) {
+//                old = Uri.parse(last);
+//                File f = Storage.getFile(old);
+//                while (f != null && !f.exists())
+//                    f = f.getParentFile();
+//                if (f != null)
+//                    old = Uri.fromFile(f);
+//            } else {
+//                old = Uri.parse(ContentResolver.SCHEME_CONTENT + Storage.CSS); // show SAF default
+//            }
+//            choicer = new OpenChoicer(OpenFileDialog.DIALOG_TYPE.FILE_DIALOG, true) {
+//                @Override
+//                public void onResult(Uri uri) {
+////                    String s = uri.getScheme();
+//                    Log.d("AAAA", "onResult:" + uri.getPath());
+//                    Log.d("AAAA", "onResult:" + uri.getScheme());
+//                    String s = "/data/data/com.github.axet.bookreader/files/1984.epub";
+//                    Uri uri1 = Uri.parse(s);
+//                    Log.d("AAAA", "onResult scheme: " + uri1.getScheme());
+////                    String s = uri.getScheme();
+////                    if (s.equals(ContentResolver.SCHEME_FILE)) {
+////                        File f = Storage.getFile(uri);
+////                        f = f.getParentFile();
+////                        SharedPreferences.Editor editor = shared.edit();
+////                        editor.putString(BookApplication.PREFERENCE_LAST_PATH, f.toString());
+////                        editor.commit();
+////                    }
+//                    loadBook(uri1, null);
+//                }
+//            };
+//            choicer.setStorageAccessFramework(this, RESULT_FILE);
+//            choicer.setPermissionsDialog(this, Storage.PERMISSIONS_RO, RESULT_FILE);
+//            choicer.show(old);
+//        }
 
         if (id == R.id.action_theme) {
             SharedPreferences.Editor edit = shared.edit();
@@ -380,6 +399,12 @@ public class MainActivity extends FullscreenActivity implements NavigationView.O
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void openBook() {
+        String s = "/data/data/com.github.axet.bookreader/files/1984.epub";
+        Uri uri = Uri.parse(s);
+        loadBook(uri, null);
     }
 
     @Override
@@ -463,25 +488,22 @@ public class MainActivity extends FullscreenActivity implements NavigationView.O
 
             final Storage.FBook fbook = storage.read(book);
 
-            final Runnable done = new Runnable() {
-                @Override
-                public void run() {
-                    fbook.close();
+            final Runnable done = () -> {
+                fbook.close();
 
-                    for (Uri u : uu) {
-                        try {
-                            Storage.RecentInfo info = new Storage.RecentInfo(MainActivity.this, u);
-                            book.info.merge(info);
-                        } catch (Exception e) {
-                            Log.d(TAG, "unable to merge info", e);
-                        }
-                        Storage.delete(MainActivity.this, u);
+                for (Uri u : uu) {
+                    try {
+                        Storage.RecentInfo info = new Storage.RecentInfo(MainActivity.this, u);
+                        book.info.merge(info);
+                    } catch (Exception e) {
+                        Log.d(TAG, "unable to merge info", e);
                     }
-                    book.info.position = selected.get(0);
-                    storage.save(book);
-
-                    openBook(book.url);
+                    Storage.delete(MainActivity.this, u);
                 }
+                book.info.position = selected.get(0);
+                storage.save(book);
+
+                openBook(book.url);
             };
 
             builder.setTitle(R.string.sync_conflict);
@@ -534,13 +556,10 @@ public class MainActivity extends FullscreenActivity implements NavigationView.O
                 TextView p = (TextView) inflater.inflate(R.layout.recent_item, pages, false);
                 if (info.position != null)
                     p.setText(info.position.getParagraphIndex() + "." + info.position.getElementIndex());
-                p.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        r.gotoPosition(info.position);
-                        selected.clear();
-                        selected.add(info.position);
-                    }
+                p.setOnClickListener(v1 -> {
+                    r.gotoPosition(info.position);
+                    selected.clear();
+                    selected.add(info.position);
                 });
                 pages.addView(p);
             }
@@ -590,7 +609,7 @@ public class MainActivity extends FullscreenActivity implements NavigationView.O
 
     public void openBook(Uri uri) {
         popBackStack(ReaderFragment.TAG, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-        addFragment(ReaderFragment.newInstance(uri), ReaderFragment.TAG).commit();
+        addFragment(ReaderFragment.newInstance(uri, bookName), ReaderFragment.TAG).commit();
     }
 
     public void openBook(Uri uri, FBReaderView.ZLTextIndexPosition pos) {
@@ -601,7 +620,7 @@ public class MainActivity extends FullscreenActivity implements NavigationView.O
     public void openLibrary() {
         FragmentManager fm = getSupportFragmentManager();
         popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-        openFragment(libraryFragment, LibraryFragment.TAG).commit();
+//        openFragment(libraryFragment, LibraryFragment.TAG).commit();
         onResume(); // update theme if changed
     }
 

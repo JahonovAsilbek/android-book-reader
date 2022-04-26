@@ -8,6 +8,7 @@ import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -134,6 +135,9 @@ public class FBFooterView extends LinearLayout {
         public void update() {
             super.update();
             setText(pagePosition.Current + "/" + pagePosition.Total);
+            Log.d("AAAA", "update: page");
+            String percent = 100 * pagePosition.Current / pagePosition.Total + "%";
+            Log.d("AAAA", "update: " + percent);
         }
     }
 
@@ -144,7 +148,8 @@ public class FBFooterView extends LinearLayout {
 
         public void update() {
             super.update();
-            setText(100 * pagePosition.Current / pagePosition.Total + "%");
+            String percent = 100 * pagePosition.Current / pagePosition.Total + "%";
+            setText(percent);
         }
     }
 
