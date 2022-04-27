@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/android-book-reader.iml" filepath="$PROJECT_DIR$/.idea/modules/android-book-reader.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android-fbreader-library/android-book-reader.android-fbreader-library.iml" filepath="$PROJECT_DIR$/.idea/modules/android-fbreader-library/android-book-reader.android-fbreader-library.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android-library/android-book-reader.android-library.iml" filepath="$PROJECT_DIR$/.idea/modules/android-library/android-book-reader.android-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android-book-reader.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android-book-reader.app.iml" />
     </modules>
   </component>

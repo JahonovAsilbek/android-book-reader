@@ -894,19 +894,19 @@ public class ScrollWidget extends RecyclerView implements ZLViewWidget {
                 return off;
             }
 
-            @Override
-            public void smoothScrollToPosition(RecyclerView recyclerView, State state, int position) {
-                PowerManager pm = (PowerManager) fb.getContext().getSystemService(Context.POWER_SERVICE);
-                if (Build.VERSION.SDK_INT >= 21 && pm.isPowerSaveMode()) {
-                    scrollToPositionWithOffset(position, 0);
-                    idley = position - findFirstPage();
-                    onScrollStateChanged(SCROLL_STATE_IDLE);
-                } else {
-                    RecyclerView.SmoothScroller smoothScroller = new TopAlwaysSmoothScroller(recyclerView.getContext());
-                    smoothScroller.setTargetPosition(position);
-                    startSmoothScroll(smoothScroller);
-                }
-            }
+//            @Override
+//            public void smoothScrollToPosition(RecyclerView recyclerView, State state, int position) {
+//                PowerManager pm = (PowerManager) fb.getContext().getSystemService(Context.POWER_SERVICE);
+//                if (pm.isPowerSaveMode()) {
+//                    scrollToPositionWithOffset(position, 0);
+//                    idley = position - findFirstPage();
+//                    onScrollStateChanged(SCROLL_STATE_IDLE);
+//                } else {
+//                    RecyclerView.SmoothScroller smoothScroller = new TopAlwaysSmoothScroller(recyclerView.getContext());
+//                    smoothScroller.setTargetPosition(position);
+//                    startSmoothScroll(smoothScroller);
+//                }
+//            }
 
             @Override
             public void onScrollStateChanged(int state) {

@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../.gradle/caches/transforms-2/files-2.1/34b4c486d2df2e8f77159a1b50ed21a5/jetified-library-0.1.17/res/drawable/panel.xml" value="0.16" />
         <entry key="../../.gradle/caches/transforms-2/files-2.1/cb79f28247a0788f4becc6c307397a65/jetified-android-library-1.35.18/res/drawable/toolbar_icon_light.xml" value="0.1675" />
         <entry key="../../.gradle/caches/transforms-2/files-2.1/cb79f28247a0788f4becc6c307397a65/jetified-android-library-1.35.18/res/drawable/toolbar_icon_round_light.xml" value="0.1675" />
         <entry key="../../Library/Android/sdk/platforms/android-32/data/res/layout/select_dialog_singlechoice.xml" value="0.25" />
