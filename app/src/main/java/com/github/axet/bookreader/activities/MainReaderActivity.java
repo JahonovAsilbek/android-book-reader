@@ -58,8 +58,8 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
-public class MainActivity extends FullscreenActivity implements NavigationView.OnNavigationItemSelectedListener, SharedPreferences.OnSharedPreferenceChangeListener {
-    public static final String TAG = MainActivity.class.getSimpleName();
+public class MainReaderActivity extends FullscreenActivity implements NavigationView.OnNavigationItemSelectedListener, SharedPreferences.OnSharedPreferenceChangeListener {
+    public static final String TAG = MainReaderActivity.class.getSimpleName();
 
     public static final int RESULT_FILE = 1;
     public static final int RESULT_ADD_CATALOG = 2;
@@ -464,7 +464,7 @@ public class MainActivity extends FullscreenActivity implements NavigationView.O
                 } catch (FileTypeDetector.DownloadInterrupted e) {
                     Log.d(TAG, "interrupted", e);
                 } catch (Throwable e) {
-                    ErrorDialog.Post(MainActivity.this, e);
+                    ErrorDialog.Post(MainReaderActivity.this, e);
                 } finally {
                     runOnUiThread(() -> d.cancel());
                 }
@@ -493,12 +493,12 @@ public class MainActivity extends FullscreenActivity implements NavigationView.O
 
                 for (Uri u : uu) {
                     try {
-                        Storage.RecentInfo info = new Storage.RecentInfo(MainActivity.this, u);
+                        Storage.RecentInfo info = new Storage.RecentInfo(MainReaderActivity.this, u);
                         book.info.merge(info);
                     } catch (Exception e) {
                         Log.d(TAG, "unable to merge info", e);
                     }
-                    Storage.delete(MainActivity.this, u);
+                    Storage.delete(MainReaderActivity.this, u);
                 }
                 book.info.position = selected.get(0);
                 storage.save(book);
@@ -527,7 +527,7 @@ public class MainActivity extends FullscreenActivity implements NavigationView.O
 
             for (Uri u : uu) {
                 try {
-                    Storage.RecentInfo info = new Storage.RecentInfo(MainActivity.this, u);
+                    Storage.RecentInfo info = new Storage.RecentInfo(MainReaderActivity.this, u);
                     if (info.position != null) {
                         boolean found = false;
                         for (int i = 0; i < rr.size(); i++) {

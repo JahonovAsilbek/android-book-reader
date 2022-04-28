@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:gravity="center"
-    tools:context="com.github.axet.bookreader.activities.MainActivity">
+    tools:context="com.github.axet.bookreader.activities.MainReaderActivity">
 
     <ImageView
         android:id="@+id/tts_left"

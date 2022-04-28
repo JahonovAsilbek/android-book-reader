@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    tools:context="com.github.axet.bookreader.activities.MainActivity">
+    tools:context="com.github.axet.bookreader.activities.MainReaderActivity">
 
     <ImageView
         android:id="@+id/expand"

@@ -50,7 +50,7 @@ import com.github.axet.androidlibrary.widgets.TreeRecyclerView;
 import com.github.axet.bookreader.BuildConfig;
 import com.github.axet.bookreader.R;
 import com.github.axet.bookreader.activities.FullscreenActivity;
-import com.github.axet.bookreader.activities.MainActivity;
+import com.github.axet.bookreader.activities.MainReaderActivity;
 import com.github.axet.bookreader.app.BookApplication;
 import com.github.axet.bookreader.app.ComicsPlugin;
 import com.github.axet.bookreader.app.Plugin;
@@ -72,7 +72,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class ReaderFragment extends Fragment implements MainActivity.SearchListener, SharedPreferences.OnSharedPreferenceChangeListener, FullscreenActivity.FullscreenListener, MainActivity.OnBackPressed {
+public class ReaderFragment extends Fragment implements MainReaderActivity.SearchListener, SharedPreferences.OnSharedPreferenceChangeListener, FullscreenActivity.FullscreenListener, MainReaderActivity.OnBackPressed {
     public static final String TAG = ReaderFragment.class.getSimpleName();
 
     public static final File FONTS = new File(Environment.getExternalStorageDirectory(), "Fonts");
@@ -595,7 +595,7 @@ public class ReaderFragment extends Fragment implements MainActivity.SearchListe
                              Bundle savedInstanceState) {
         final View v = inflater.inflate(R.layout.fragment_reader, container, false);
 
-        final MainActivity main = (MainActivity) getActivity();
+        final MainReaderActivity main = (MainReaderActivity) getActivity();
         if (main != null) {
             String bookName = getArguments().getString("bookName", getString(R.string.app_name));
             main.toolbar.setTitle(bookName);
@@ -640,7 +640,7 @@ public class ReaderFragment extends Fragment implements MainActivity.SearchListe
 
             @Override
             public void ttsStatus(boolean speaking) {
-                MainActivity main = (MainActivity) getActivity();
+                MainReaderActivity main = (MainReaderActivity) getActivity();
                 main.volumeEnabled = !speaking;
             }
         };

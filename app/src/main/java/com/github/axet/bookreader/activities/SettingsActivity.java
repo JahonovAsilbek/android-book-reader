@@ -115,7 +115,7 @@ public class SettingsActivity extends AppCompatSettingsThemeActivity {
             if (id == android.R.id.home) {
                 Activity a = getActivity();
                 a.finish();
-                startActivity(new Intent(getActivity(), MainActivity.class));
+                startActivity(new Intent(getActivity(), MainReaderActivity.class));
                 return true;
             }
             return super.onOptionsItemSelected(item);
